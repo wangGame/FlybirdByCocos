@@ -24,7 +24,7 @@ export class LoadingScene2 extends Component {
         ResUtils.resUtils.loadFolderAssets("img", SpriteFrame, (progress) => {
             console.log("加载进度:", progress)
         }).then(()=>{
-            //   director.loadScene("mainScene");
+              director.loadScene("mainScene");
         })
     }
 }

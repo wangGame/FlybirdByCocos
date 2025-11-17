@@ -7,11 +7,12 @@ export class BgMove extends Component {
     targetObj1:Node = null
     @property(Node)
     targetObj2:Node = null
-    _isMove:boolean = false
+    @property(Node)
+    targetObj3:Node = null
     @property
     moveSpeed:number = 100
-
-
+    _isMove:boolean = false
+    
     update(deltaTime: number) {
         if(this._isMove){
             const moveDistance = this.moveSpeed * deltaTime

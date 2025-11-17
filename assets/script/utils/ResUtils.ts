@@ -63,9 +63,9 @@ export class ResUtils {
                     const dict: { [name: string]: T } = {}
                     assets.forEach(asset => {
                         dict[asset.name] = asset
-                        const cacheKey = `${folderPath}/${asset.name}`
+                        const cacheKey = `${folderPath}/${asset.name}/${asset.constructor.name}`
                         this.resCache.set(cacheKey, asset)
-                        console.log(asset.name)
+                        console.log(cacheKey)
                         // console.log(`key:${folderPath}/${cacheKey}/${asset.constructor.name}`)
                     })
                     console.log(`文件夹${folderPath}加载成功,共 ${assets.length} 个资源`)
