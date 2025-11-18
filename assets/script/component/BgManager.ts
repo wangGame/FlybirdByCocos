@@ -1,5 +1,6 @@
 import { _decorator, CCInteger, Component, Node, sp, view } from 'cc';
 import { MoveComponent } from './MoveComponent';
+import { GameConfig } from '../manager/GameConfig';
 const { ccclass, property } = _decorator;
 
 @ccclass('BgManager')
@@ -9,15 +10,18 @@ export class BgManager extends Component {
     @property(CCInteger)
     private speed:number = 0
     private widthScreen:number
+    private _isMove = false;
 
     start(){
         const visible = view.getVisibleSize();
         this.widthScreen = visible.x/2;
         console.log(this.widthScreen)
+        GameConfig.instance
     }
     
     update(deltaTime: number) {
-        const moveDt = this.speed * deltaTime
+        if(!this.isMove)return
+        const moveDt = GameConfig.instance.speed * deltaTime
         let lastPositionX = 0
         for(let i = 0;i<this.move.length;i++){
             lastPositionX = this.move[i].moveComponent(moveDt) 
@@ -41,6 +45,14 @@ export class BgManager extends Component {
                 node.setPosition(maxX + 720, node.position.y, node.position.z);
             }
         }
+    }
+
+    set isMove(isMove:boolean){
+        this._isMove = isMove
+    }
+
+    get isMove(){
+        return this._isMove
     }
 }
 

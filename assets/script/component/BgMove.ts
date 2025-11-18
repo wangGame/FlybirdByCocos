@@ -1,4 +1,5 @@
 import { _decorator, Component, Node } from 'cc';
+import { GameConfig } from '../manager/GameConfig';
 const { ccclass, property } = _decorator;
 
 @ccclass('BgMove')
@@ -15,7 +16,7 @@ export class BgMove extends Component {
     
     update(deltaTime: number) {
         if(this._isMove){
-            const moveDistance = this.moveSpeed * deltaTime
+            const moveDistance = GameConfig.instance.speed * deltaTime
             let p1 = this.targetObj1.getPosition()
             this.targetObj1.setPosition(p1.x - moveDistance,p1.y)
 

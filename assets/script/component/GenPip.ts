@@ -9,9 +9,6 @@ export class GenPip extends Component {
     private genDistanceTime = 3
     private timer = 3
     private _isSpawing:boolean = false
-    start() {
-
-    }
 
     update(deltaTime: number) {
         if(this._isSpawing){
@@ -35,6 +32,10 @@ export class GenPip extends Component {
 
     disableSpawing(){
         this._isSpawing = false
+        this.stopAll()
+    }
+
+    private stopAll(){
         this.node.children.forEach(element=>{
             let pipMove = element.getComponent(PipMove)
             pipMove.isStop = true

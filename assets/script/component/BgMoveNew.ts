@@ -22,7 +22,7 @@ export class BgMoveNew extends Component {
             bg.setPosition(720 * i, 0, 0);
         }
 
-        console.log(`屏幕宽${screenW}，背景宽${bgW}，补充 ${count} 张背景`);
+    
     }
 
     update(deltaTime: number) {
