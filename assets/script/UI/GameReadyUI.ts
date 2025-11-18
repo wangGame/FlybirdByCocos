@@ -1,5 +1,5 @@
 import { _decorator, Component, Input, input, Node } from 'cc';
-import { GameManager } from '../manager/GameManager';
+import { GameManagerNew } from '../manager/GameManagerNew';
 const { ccclass } = _decorator;
 
 @ccclass('GameReadyUI')
@@ -13,7 +13,8 @@ export class GameReadyUI extends Component {
     }
 
     startGame(){
-        GameManager.inst().transitionToGamingState() 
+        GameManagerNew.instance.setCanMove(true)
+        this.node.destroy()
     }
 }
 
