@@ -64,6 +64,13 @@ export class Brid extends Component {
         this._canCtrl = false
         this._rigiBody.enabled = false
     }
+
+    public gameOver(){
+        this.getComponent(Animation).enabled = false
+        this._canCtrl = false
+       
+        
+    }
 }
 
 

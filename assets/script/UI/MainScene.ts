@@ -7,10 +7,6 @@ export class MainScene extends Component {
 
     }
 
-    update(deltaTime: number) {
-        
-    }
-
     startGame(){
         director.loadScene("Gamescene")
     }
