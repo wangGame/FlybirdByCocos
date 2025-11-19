@@ -42,7 +42,8 @@ export class GameOverUI extends Component {
     }
 
     resetGame(){
-        director.loadScene(director.getScene().name);
+        console.log("Resetting game"+director.getScene().name);
+        director.loadScene("Gamescene");
     }
 }
 

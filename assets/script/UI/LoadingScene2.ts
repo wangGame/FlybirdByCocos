@@ -12,6 +12,7 @@ export class LoadingScene2 extends Component {
     updateProgress(progress: number) {
         console.log(`加载进度: ${(progress * 100).toFixed(1)}%`);
         // TODO: 更新进度条 UI
+        this.processBar.progress = progress
     }
 
     async start() {
@@ -23,6 +24,7 @@ export class LoadingScene2 extends Component {
 
         ResUtils.resUtils.loadFolderAssets("img", SpriteFrame, (progress) => {
             console.log("加载进度:", progress)
+            this.updateProgress(progress)
         }).then(()=>{
               director.loadScene("mainScene");
         })
