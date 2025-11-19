@@ -2192,7 +2192,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_clip": null,
+    "_clip": {
+      "__uuid__": "7a93aba2-2e4f-4466-be07-563978d2f5c8",
+      "__expectedType__": "cc.AudioClip"
+    },
     "_loop": true,
     "_playOnAwake": true,
     "_volume": 1,
@@ -2224,6 +2227,18 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "bgClip": {
+      "__uuid__": "7a93aba2-2e4f-4466-be07-563978d2f5c8",
+      "__expectedType__": "cc.AudioClip"
+    },
+    "clickClip": {
+      "__uuid__": "8384052b-6c4c-4184-b11d-34453d91a7fa",
+      "__expectedType__": "cc.AudioClip"
+    },
+    "gameOverClip": {
+      "__uuid__": "9c610dd6-6336-4756-849e-1b2766a041ca",
+      "__expectedType__": "cc.AudioClip"
+    },
     "_id": "25lhkqW+RN4IcyrSR3qtcs"
   },
   {

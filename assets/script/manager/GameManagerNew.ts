@@ -5,6 +5,7 @@ import { GenPip } from '../component/GenPip';
 import { Brid } from '../component/Brid';
 import { ResUtils } from '../utils/ResUtils';
 import { GameData } from '../data/GameData';
+import { AudioPlayer } from '../component/AudioPlayer';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManagerNew')
@@ -49,6 +50,7 @@ export class GameManagerNew extends Component {
         if(this.gameOverFlag){
             return
         }
+        AudioPlayer.instance().playGameOver()
         this.gameOverFlag = true
         this.moveManager.canMove = false
         this.pipGen.disableSpawing()
