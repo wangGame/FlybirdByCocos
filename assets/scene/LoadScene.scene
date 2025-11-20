@@ -1241,6 +1241,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "processBar": {
+      "__id__": 24
+    },
     "_id": "0a+eH2Dr9PfpmZ6IWL7sCK"
   },
   {
