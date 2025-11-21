@@ -1,5 +1,6 @@
 import { _decorator, Animation, Collider, Collider2D, Component, Contact2DType, Input, input, IPhysics2DContact, Node, RigidBody2D, Vec2, Vec3 } from 'cc';
 import { GameManagerNew } from '../manager/GameManagerNew';
+import { AudioPlayer } from './AudioPlayer';
 const { ccclass, property } = _decorator;
 
 @ccclass('Brid')
@@ -38,6 +39,7 @@ export class Brid extends Component {
     
     touchStart(){
         if(this._canCtrl){
+            AudioPlayer.instance().playClick()
             this._rigiBody.linearVelocity = new Vec2(0,10)
             this.node.angle = 30        
         }
