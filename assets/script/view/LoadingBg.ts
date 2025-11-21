@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, sp, Sprite, SpriteFrame, UITransform, view } from 'cc';
+import { _decorator, Component, floatToHalf, Node, sp, Sprite, SpriteFrame, UITransform, view } from 'cc';
 import { ResUtils } from '../utils/ResUtils';
 const { ccclass, property } = _decorator;
 
@@ -16,7 +16,11 @@ export class LoadingBg extends Component {
         for(let i=0;i<num;i++){
             let node = await this.createBgNode()
             node.parent = this.node
-            node.setPosition(i*720 - i * width/2.0,0)
+            let offX = width / 2.0
+            if(num == 1){
+                offX = 0
+            }
+            node.setPosition(i*720 - offX,0)
         }
         //宽度可以多方几个，  高度通过缩放解决
         let height = view.getVisibleSize().height

@@ -28,7 +28,7 @@ export class LoadingScene2 extends Component {
             console.log("加载进度:", progress)
             this.updateProgress(progress)
         }).then(()=>{
-            //   director.loadScene("mainScene");
+              director.loadScene("mainScene");
         })
     }
 }
