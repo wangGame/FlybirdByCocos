@@ -8,7 +8,6 @@ export class BgManager extends Component {
     @property([MoveComponent])
     private move:MoveComponent[] = []
     @property(CCInteger)
-    private speed:number = 0
     private widthScreen:number
     private _isMove = false;
 
@@ -16,7 +15,12 @@ export class BgManager extends Component {
         const visible = view.getVisibleSize();
         this.widthScreen = visible.x/2;
         console.log(this.widthScreen)
-      
+        
+        let height = view.getVisibleSize().height
+        let scale = height / 1500
+        if(scale>1.0){
+            this.node.setScale(scale,scale,scale)
+        }
     }
     
     update(deltaTime: number) {

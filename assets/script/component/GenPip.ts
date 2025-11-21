@@ -1,4 +1,4 @@
-import { _decorator, Component, instantiate, math, Node, Prefab } from 'cc';
+import { _decorator, Component, instantiate, math, Node, Prefab, resources, view } from 'cc';
 import { PipMove } from './PipMove';
 const { ccclass, property } = _decorator;
 
@@ -9,6 +9,11 @@ export class GenPip extends Component {
     private genDistanceTime = 3
     private timer = 3
     private _isSpawing:boolean = false
+
+    start(){
+        let screenWidthHalf = view.getVisibleSize().width/2.0
+        this.node.setPosition(screenWidthHalf+30,0,0)
+    }
 
     update(deltaTime: number) {
         if(this._isSpawing){
