@@ -26,8 +26,10 @@ export class Brid extends Component {
     }
 
     onEndContact(selfCollider:Collider2D,otherCollider:Collider2D,contact:IPhysics2DContact | null){
-        if(otherCollider.tag == 30){
-            GameManagerNew.instance.addScore() 
+        if(this._canCtrl){
+            if(otherCollider.tag == 30){
+                GameManagerNew.instance.addScore() 
+            }
         }
     }
 
@@ -70,8 +72,6 @@ export class Brid extends Component {
     public gameOver(){
         this.getComponent(Animation).enabled = false
         this._canCtrl = false
-       
-        
     }
 }
 

@@ -1,6 +1,6 @@
 import { _decorator, Component, director, Label, Node, ProgressBar, SpriteFrame, Texture2D } from 'cc';
 import { ResUtils } from '../utils/ResUtils';
-import { FadeManager } from '../utils/FadeManager';
+import FaderManager from '../view/FaderManager';
 const { ccclass, property } = _decorator;
 
 
@@ -29,8 +29,7 @@ export class LoadingScene2 extends Component {
             console.log("加载进度:", progress)
             this.updateProgress(progress)
         }).then(()=>{
-
-            FadeManager.instance.fadeToScene("mainScene",5)
+            director.loadScene("mainScene")
         })
     }
 }
