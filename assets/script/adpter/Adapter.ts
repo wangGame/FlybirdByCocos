@@ -8,9 +8,13 @@ const { ccclass, property } = _decorator;
 export class Adapter extends Component {
     protected onLoad(): void {
         let width = view.getVisibleSize().width
+        let height = view.getVisibleSize().height
         console.log(view)
-        if(width < 720){
+        
+        if(width>height){
             //
+            view.setResolutionPolicy(ResolutionPolicy.FIXED_HEIGHT)
+        }else{
             view.setResolutionPolicy(ResolutionPolicy.FIXED_WIDTH)
         }
     }
