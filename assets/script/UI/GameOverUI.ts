@@ -8,9 +8,6 @@ export class GameOverUI extends Component {
 
     @property(Label)
     private bestLabel:Label
-    start() {
-        
-    }
 
     show(scoreNum:number,bestNum:number){
         this.node.active = true
@@ -19,7 +16,6 @@ export class GameOverUI extends Component {
     }
 
     resetGame(){
-    
         director.loadScene(director.getScene().name);
     }
 }

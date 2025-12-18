@@ -1,6 +1,5 @@
 import { _decorator, Animation, Collider, Collider2D, Component, Contact2DType, Input, input, IPhysics2DContact, Node, RigidBody2D, Vec2, Vec3 } from 'cc';
-import { GameData } from './GameData';
-import { GameManager } from './GameManager';
+import { GameManager } from '../manager/GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Brid')

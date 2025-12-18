@@ -1,10 +1,10 @@
 import { _decorator, CCInteger, Component, Label, Node } from 'cc';
-import { GameState } from './enum/GameState';
-import { Brid } from './Brid';
-import { BgMove } from './BgMove';
-import { GenPip } from './GenPip';
-import { GameData } from './GameData';
-import { GameOverUI } from './GameOverUI';
+import { GameState } from '../enum/GameState';
+import { Brid } from '../component/Brid';
+import { BgMove } from '../component/BgMove';
+import { GenPip } from '../component/GenPip';
+import { GameData } from '../data/GameData';
+import { GameOverUI } from '../UI/GameOverUI';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
